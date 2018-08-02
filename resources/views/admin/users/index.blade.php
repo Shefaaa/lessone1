@@ -3,7 +3,30 @@
 
 @section('content')
 
+
+
 <h1>Users</h1>
+
+@if(Session::has('added_user'))
+<div class="alert alert-success">
+<p>{{Session('added_user')}}</p>
+</div>
+
+@endif
+
+@if(Session::has('updated_user'))
+<div class="alert alert-success">
+<p>{{Session('updated_user')}}</p>
+</div>
+
+@endif
+
+@if(Session::has('deleted_user'))
+<div class="alert alert-danger">
+<p>{{Session('deleted_user')}}</p>
+</div>
+
+@endif
 
 <table class="table table-striped">
     <thead>

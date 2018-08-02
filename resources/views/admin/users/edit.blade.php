@@ -7,6 +7,9 @@
 <h1>Edit User</h1>
 
 
+
+
+
 <div class="row">
 
 <div class="col-sm-3">
@@ -48,10 +51,19 @@
     {!! Form::password('password',['class'=>'form-control'])!!}
    </div>
 
-   <div class="form-group">
+   <div class="form-group col-sm-6">
    	{!! Form::submit('Edit User',['class'=>'btn btn-primary'])!!}
    </div>
 {!! Form::close() !!}
+
+
+{!! Form::open(['method'=>'DELETE','action'=>['AdminUsersController@destroy',$user->id]]) !!}
+
+<div class="form-group col-sm-6">
+  {!! Form::submit('Delete User',['class'=>'btn btn-danger']) !!}
+</div>
+
+{!! Form::close()!!}
 </div>
 </div>
 
